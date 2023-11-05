@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chunjae.privatepro05.per.UserMapper">
+    <select id="userList" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser order by id desc
+    </select>
+    <!-- user CRUD -->
+    <select id="userDetail" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where name=#{name}
+    </select>
+    <insert id="userInsert">
+        insert into kuser values(default, #{name}, #{password}, #{username}, #{email}, #{address}, #{tel}, default, default, default)
+    </insert>
+    <update id="userUpdate">
+        update kuser set password=#{password}, username=#{username}, email=#{email}, address=#{address}, tel=#{tel} where name=#{name}
+    </update>
+    <delete id="userDelete">
+        delete from kuser where name=#{name}
+    </delete>
+    <!-- 로그인 -->
+    <select id="emailLogin" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where email=#{email}
+    </select>
+    <select id="idLogin" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where name=#{name}
+    </select>
+    <select id="pkLogin" resultType="com.chunjae.privatepro05.entity.Kuser">
+        selct * from kuser where id=#{id}
+    </select>
+    <!-- 아이디, 비번 찾기-->
+    <select id="findId" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where email=#{email} and tel=#{tel}
+    </select>
+    <select id="findPw" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where email=#{email} and tel=#{tel} and name=#{name}
+    </select>
+    <!-- 계정 활성화, 비활성화 -->
+    <update id="setWithdraw">
+        update kuser set act='WITHDRAW' where id=#{id}
+    </update>
+    <update id="setActivate">
+        update kuser set act='ACTIVATE' where name=#{name}
+    </update>
+    <update id="setDormant">
+        update kuser set act='DORMANT' where name=#{name}
+    </update>
+    <!-- 권한 부여 -->
+    <update id="udLev">
+        update kuser set lev=#{lev} where name=#{name}
+    </update>
+</mapper>
