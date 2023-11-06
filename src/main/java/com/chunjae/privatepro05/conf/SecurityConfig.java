@@ -34,7 +34,7 @@ public class SecurityConfig {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/login","/join","/idCheck","emailCheck", "/joinPro").permitAll()
+                .antMatchers("/login","/join","/idCheck","emailCheck", "/userInsertPro").permitAll()
                 .mvcMatchers("/","/resource/**","/css/**","/js/**","/images/**").permitAll()
                 .anyRequest().authenticated();
 

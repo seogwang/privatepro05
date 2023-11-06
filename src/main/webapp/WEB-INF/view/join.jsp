@@ -89,13 +89,14 @@
            });
         });
 
-        $("#emailCheckBtn").click(function (){
+        $("#emailCheckBtn").click(function(){
             if($("#email").val()=="") {
                 alert("이메일을 입력하지 않으셨습니다.")
                 $("#email").focus();
                 return;
             }
             var params = { email : $("#email").val() };
+            console.log(params);
             $.ajax({
                 url:"${path1}/emailCheck",
                 type:"post",
@@ -122,6 +123,14 @@
             if(f.password.value!=f.password2.value){
                 alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
                 f.password.focus();
+                return false;
+            }
+            if(f.idCheck.value!="true"){
+                alert("아이디 중복 체크를 하지 않으셨습니다.");
+                return false;
+            }
+            if(f.emailCheck.value!="true"){
+                alert("이메일 중복 체크를 하지 않으셨습니다.");
                 return false;
             }
         }
