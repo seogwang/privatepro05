@@ -14,6 +14,9 @@
     <update id="userUpdate">
         update kuser set password=#{password}, username=#{username}, email=#{email}, address=#{address}, tel=#{tel} where name=#{name}
     </update>
+    <update id="userUpdateExPw">
+        update kuser set username=#{username}, email=#{email}, address=#{address}, tel=#{tel} where name=#{name}
+    </update>
     <delete id="userDelete">
         delete from kuser where name=#{name}
     </delete>
@@ -24,8 +27,11 @@
     <select id="idLogin" resultType="com.chunjae.privatepro05.entity.Kuser">
         select * from kuser where name=#{name}
     </select>
-    <select id="pkLogin" resultType="com.chunjae.privatepro05.entity.Kuser">
-        selct * from kuser where id=#{id}
+    <select id="getUserByPk" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where id=#{id}
+    </select>
+    <select id="getUserByEmail" resultType="com.chunjae.privatepro05.entity.Kuser">
+        select * from kuser where email=#{email}
     </select>
     <!-- 아이디, 비번 찾기-->
     <select id="findId" resultType="com.chunjae.privatepro05.entity.Kuser">
@@ -35,13 +41,13 @@
         select * from kuser where email=#{email} and tel=#{tel} and name=#{name}
     </select>
     <!-- 계정 활성화, 비활성화 -->
-    <update id="setWithdraw">
+    <update id="getWithdraw">
         update kuser set act='WITHDRAW' where id=#{id}
     </update>
-    <update id="setActivate">
+    <update id="getActivate">
         update kuser set act='ACTIVATE' where name=#{name}
     </update>
-    <update id="setDormant">
+    <update id="getDormant">
         update kuser set act='DORMANT' where name=#{name}
     </update>
     <!-- 권한 부여 -->

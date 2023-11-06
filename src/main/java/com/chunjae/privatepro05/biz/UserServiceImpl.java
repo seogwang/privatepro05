@@ -33,6 +33,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int userUpdateExPw(Kuser kuser) {
+        return userMapper.userUpdateExPw(kuser);
+    }
+
+    @Override
     public int userUpdate(Kuser kuser) {
         kuser.setPassword(passwordEncoder.encode(kuser.getPassword()));
         return userMapper.userUpdate(kuser);
@@ -54,8 +59,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Kuser pkLogin(Kuser kuser) {
-        return userMapper.pkLogin(kuser);
+    public Kuser getUserByPk(Integer id) {
+        return userMapper.getUserByPk(id);
+    }
+
+    @Override
+    public Kuser getUserByEmail(String email) {
+        return userMapper.getUserByEmail(email);
     }
 
     @Override
@@ -69,23 +79,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Kuser setWithdraw(String id) {
-        return userMapper.setWithdraw(id);
+    public int getWithdraw(Integer id) {
+        return userMapper.getWithdraw(id);
     }
 
     @Override
-    public Kuser setActivate(String name) {
-        return userMapper.setActivate(name);
+    public int getActivate(String name) {
+        return userMapper.getActivate(name);
     }
 
     @Override
-    public Kuser setDormant(String name) {
-        return userMapper.setDormant(name);
+    public int getDormant(String name) {
+        return userMapper.getDormant(name);
     }
 
     @Override
-    public int udLev(Kuser kuser) {
-        return userMapper.udLev(kuser);
+    public int udLev(String name, String lev) {
+        return userMapper.udLev(name, lev);
     }
 
     @Override
