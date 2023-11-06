@@ -77,7 +77,7 @@ public class UserController {
 
     @PostMapping("/idCheck")
     @ResponseBody
-    public Boolean idCheckAjax(@RequestBody Kuser test) {
+    public boolean idCheckAjax(@RequestBody Kuser test) {
         logger.info("*************** name : " + test.getName());
         boolean result = false;
         Kuser user = userService.userDetail(test.getName());
@@ -91,9 +91,10 @@ public class UserController {
 
     @PostMapping("/emailCheck")
     @ResponseBody
-    public boolean emailCheckAjax(@RequestParam("email") String email) {
+    public boolean emailCheckAjax(@RequestParam("email") String email){
         Kuser user = userService.getUserByEmail(email);
-        if(user != null) {
+        System.out.println("user : "+user);
+        if(user!=null){
             return false;
         } else {
             return true;

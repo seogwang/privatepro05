@@ -88,11 +88,9 @@
                }
            });
         });
-    });
 
-    $(document).ready(function(){
         $("#emailCheckBtn").click(function (){
-            if($("#email").val() == "") {
+            if($("#email").val()=="") {
                 alert("이메일을 입력하지 않으셨습니다.")
                 $("#email").focus();
                 return;
@@ -119,15 +117,15 @@
                 }
             });
         });
-    });
 
-    function joinConfirm(f) {
-        if(f.password.value!=f.password2.value){
-            alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
-            f.password.focus();
-            return false;
+        function joinConfirm(f) {
+            if(f.password.value!=f.password2.value){
+                alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+                f.password.focus();
+                return false;
+            }
         }
-    }
+    });
 </script>
 
 <jsp:include page="./include/footer.jsp" />
