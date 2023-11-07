@@ -67,7 +67,7 @@ public class UserController {
     }
 
     @PostMapping("/userInsertPro")
-    public String userInsert(@RequestParam Kuser kuser) {
+    public String userInsert(Kuser kuser, Model model) {
         int cnt = userService.userInsert(kuser);
         if(cnt == 0) {
             throw new NoSuchDataException("No Insert Process Data");

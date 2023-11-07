@@ -5,3 +5,7 @@
 <link rel="stylesheet" href="${path1}/resource/css/pure-min.css">
 <link rel="stylesheet" href="${path1}/resource/css/grids-responsive-min.css">
 <link rel="stylesheet" href="${path1}/resource/css/styles.css">
+
+<style>
+    .content { min-height: 82vh; width: 1080px; margin: 0 auto; }
+</style>

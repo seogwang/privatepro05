@@ -9,7 +9,7 @@
 <div class="pure-menu pure-menu-horizontal">
   <a href="/" class="pure-menu-heading" style="font-weight: bold">T-FleaMarket</a>
   <ul class="pure-menu-list">
-    <li class="pure-menu-item"><a href="#" class="pure-menu-link">게시판</a></li>
+    <li class="pure-menu-item"><a href="/free/list" class="pure-menu-link">게시판</a></li>
 
     <c:if test="${empty principal}">
     <li class="pure-menu-item"><a href="/join" class="pure-menu-link">회원가입</a></li>
@@ -23,5 +23,6 @@
     </c:if>
 <%--    <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Pricing</a></li>--%>
 <%--    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>--%>
+<%--      <li class="pure-menu-item">Principal : ${principal}</li>--%>
   </ul>
 </div>

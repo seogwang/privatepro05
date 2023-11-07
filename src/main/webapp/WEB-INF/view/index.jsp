@@ -19,7 +19,6 @@
 <body>
 
 <jsp:include page="./include/header.jsp" />
-
 <div class="banner">
     <h1 class="banner-head">
         천재교육 선생님들을 위한<br>
@@ -27,6 +26,7 @@
     </h1>
 </div>
 
+<div class="content">
 <%--<div class="l-content">--%>
 <%--    <div class="pricing-tables pure-g">--%>
 <%--        <div class="pure-u-1 pure-u-md-1-3">--%>
@@ -139,7 +139,7 @@
 <%--        </div>--%>
 <%--    </div> <!-- end information -->--%>
 <%--</div> <!-- end l-content -->--%>
-
+</div>
 <jsp:include page="./include/footer.jsp" />
 </body>
 </html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chunjae.privatepro05.per.FreeMapper">
+    <select id="freeList" resultType="com.chunjae.privatepro05.entity.Free">
+        select * from free order by resdate desc
+    </select>
+    <select id="freeDetail" resultType="com.chunjae.privatepro05.entity.Free">
+        select * from free where no=#{no}
+    </select>
+    <insert id="freeInsert">
+        insert into free values(default, title=#{title }, content=#{content }, default, default, id=#{id })
+    </insert>
+    <update id="freeUpdate">
+        update free set title=#{title }, content=#{content } where no=#{no }
+    </update>
+    <delete id="freeDelete">
+        delete from free where no=#{no }
+    </delete>
+    <update id="visitCount">
+        update free set visit=visit+1 where no=#{no }
+    </update>
+</mapper>

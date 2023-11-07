@@ -37,6 +37,28 @@ DROP TABLE kuser;
 DESC kuser;
 
 
+CREATE TABLE free (
+no INT AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(200) NOT NULL,
+content VARCHAR(3000) NOT NULL,
+resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+visit INT DEFAULT 0,
+id VARCHAR(200) NOT NULL
+);
+
+INSERT INTO free VALUES(DEFAULT, '자유 게시판 더미1', '자유게시판 더미 1입니다.', DEFAULT, DEFAULT, 'seo');
+INSERT INTO free VALUES(DEFAULT, '자유 게시판 더미2', '자유게시판 더미 2입니다.', DEFAULT, DEFAULT, 'admin');
+INSERT INTO free VALUES(DEFAULT, '자유 게시판 더미3', '자유게시판 더미 3입니다.', DEFAULT, DEFAULT, 'shin');
+
+create table freecomment (
+cno INT AUTO_INCREMENT PRIMARY KEY,
+comment VARCHAR(1000) NOT NULL,
+id VARCHAR(200) NOT NULL,
+resdate TIMESTAMP CURRENT_TIMESTAMP
+par INT(10) NOT null
+);
+
+COMMIT;
 
 ######################################################
 
