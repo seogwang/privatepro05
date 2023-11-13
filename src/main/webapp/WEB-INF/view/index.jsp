@@ -17,7 +17,6 @@
     <title>T-FleaMarket</title>
 </head>
 <body>
-
 <jsp:include page="./include/header.jsp" />
 <div class="banner">
     <h1 class="banner-head">

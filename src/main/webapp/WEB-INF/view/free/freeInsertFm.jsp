@@ -21,8 +21,10 @@
 <jsp:include page="../include/header.jsp" />
 <div class="content">
     <h2>자유게시판 글쓰기</h2>
-    <form class="pure-form">
+    <form action="/free/freeInsertPro" class="pure-form" method="post" >
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         <fieldset class="pure-group">
+            <input type="hidden" id="id" name="id" value="${principal}" />
             <input type="text" id="title" name="title" class="pure-input-1-2" placeholder="제목" />
         </fieldset>
         <fieldset class="pure-group">

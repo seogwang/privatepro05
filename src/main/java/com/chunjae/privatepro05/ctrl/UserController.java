@@ -117,6 +117,8 @@ public class UserController {
                 model.addAttribute("msg", "로그인 성공");
                 session.setAttribute("sname", user.getName());
                 session.setAttribute("slevel", user.getLev());
+                System.out.println("sname"+session.getAttribute("sname"));
+                System.out.println("slevel"+session.getAttribute("slevel"));
             } else {
                 model.addAttribute("msg", "로그인 실패");
                 session.invalidate();
@@ -135,7 +137,7 @@ public class UserController {
     }
 
     @GetMapping("/userUpdateFm")
-    public String userUpdateForm(@RequestParam("id") Integer id, Model model) {
+    public String userUpdateForm(@RequestParam("id") Long id, Model model) {
         Kuser user = userService.getUserByPk(id);
         model.addAttribute("msg", "회원정보 수정 가능");
         model.addAttribute("user", user);

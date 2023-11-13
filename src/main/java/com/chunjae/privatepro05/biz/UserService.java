@@ -14,7 +14,7 @@ public interface UserService {
     public int userDelete(String name);
     public Kuser emailLogin(Kuser kuser);
     public Kuser idLogin(String name);
-    public Kuser getUserByPk(Integer id);
+    public Kuser getUserByPk(Long id);
     public Kuser getUserByEmail(String email);
     public Kuser findId(Kuser kuser);
     public Kuser findPw(Kuser kuser);

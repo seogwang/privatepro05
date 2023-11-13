@@ -15,6 +15,12 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <jsp:include page="../include/head.jsp" />
     <title>자유게시판 상세보기</title>
+    <style>
+        .button-error {
+            background: rgb(202, 60, 60);
+            /* this is a maroon */
+        }
+    </style>
 </head>
 <body>
 
@@ -32,6 +38,10 @@
             <td>${free.content }</td>
         </tr>
         <tr>
+            <th>작성자</th>
+            <td>${free.id }</td>
+        </tr>
+        <tr>
             <th>작성일</th>
             <td>${free.resdate }</td>
         </tr>
@@ -41,6 +51,9 @@
         </tr>
         </tbody>
     </table>
+
+    <a class="button-error pure-button" href="/free/freeDelete?no=${free.no }">글삭제</a>
+
 </div>
 
 <jsp:include page="../include/footer.jsp" />

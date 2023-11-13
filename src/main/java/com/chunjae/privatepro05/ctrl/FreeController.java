@@ -1,7 +1,9 @@
 package com.chunjae.privatepro05.ctrl;
 
 import com.chunjae.privatepro05.biz.FreeService;
+import com.chunjae.privatepro05.biz.UserService;
 import com.chunjae.privatepro05.entity.Free;
+import com.chunjae.privatepro05.entity.Kuser;
 import com.chunjae.privatepro05.excep.NoSuchDataException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Slf4j
@@ -20,6 +24,9 @@ import java.util.List;
 public class FreeController {
     @Autowired
     private FreeService freeService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("list")
     public String freeList(Model model) {
@@ -48,10 +55,24 @@ public class FreeController {
 
     @PostMapping("freeInsertPro")
     public String freeInsert(Free free, Model model) {
+        long id = Long.parseLong(free.getId());
+        Kuser user = userService.getUserByPk(id);
+        free.setId(user.getName());
         int cnt = freeService.freeInsert(free);
         if(cnt == 0) {
             throw new NoSuchDataException("No Insert Process Data");
         }
-        return "redirect:free/list";
+        return "redirect:list";
+    }
+
+    @GetMapping("freeDelete")
+    public String freeDelete(@RequestParam("no") int no){
+        log.info("no : " + no);
+        int cnt = 0;
+        cnt = freeService.freeDelete(no);
+        if(cnt == 0) {
+            throw new NoSuchDataException("No Delete process Data");
+        }
+        return "redirect:list";
     }
 }

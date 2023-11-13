@@ -2,7 +2,7 @@ CREATE DATABASE tfleamarket;
 
 USE tfleamarket;
 
-CREATE TABLE kuser(id int PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE kuser(id bigint PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(20) NOT NULL,
 password VARCHAR(300) NOT NULL,
 username VARCHAR(50) NOT NULL,
@@ -29,6 +29,7 @@ UPDATE kuser SET PASSWORD='1234';
 
 SELECT * FROM kuser WHERE id=1;
 
+ALTER TABLE kuser MODIFY id bigint;
 
 COMMIT;
 
@@ -59,6 +60,10 @@ par INT(10) NOT null
 );
 
 COMMIT;
+
+SHOW TABLES;
+
+SELECT * FROM free;
 
 ######################################################
 

@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Free {
-    private int no;
+    private long no;
     private String title;
     private String content;
     private String resdate;

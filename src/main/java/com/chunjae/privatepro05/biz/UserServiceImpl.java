@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Kuser getUserByPk(Integer id) {
+    public Kuser getUserByPk(Long id) {
         return userMapper.getUserByPk(id);
     }
 

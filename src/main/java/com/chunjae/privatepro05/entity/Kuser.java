@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Kuser {
-    private int id;
+    private long id;
     private String name;
     private String password;
     private String username;

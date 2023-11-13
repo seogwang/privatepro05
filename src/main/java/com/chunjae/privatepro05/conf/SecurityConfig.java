@@ -35,6 +35,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/login","/join","/idCheck","/emailCheck", "/userInsertPro").permitAll()
+                .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .mvcMatchers("/","/resource/**","/css/**","/js/**","/images/**").permitAll()
                 .anyRequest().authenticated();
 

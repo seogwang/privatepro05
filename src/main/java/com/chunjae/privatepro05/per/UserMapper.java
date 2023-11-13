@@ -15,7 +15,7 @@ public interface UserMapper {
     int userDelete(String name);
     Kuser emailLogin(Kuser kuser);
     Kuser idLogin(String name);
-    Kuser getUserByPk(Integer id);
+    Kuser getUserByPk(Long id);
     Kuser getUserByEmail(String email);
     Kuser findId(Kuser kuser);
     Kuser findPw(Kuser kuser);

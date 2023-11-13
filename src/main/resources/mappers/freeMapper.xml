@@ -8,7 +8,7 @@
         select * from free where no=#{no}
     </select>
     <insert id="freeInsert">
-        insert into free values(default, title=#{title }, content=#{content }, default, default, id=#{id })
+        insert into free values(default, #{title }, #{content }, default, default, #{id })
     </insert>
     <update id="freeUpdate">
         update free set title=#{title }, content=#{content } where no=#{no }

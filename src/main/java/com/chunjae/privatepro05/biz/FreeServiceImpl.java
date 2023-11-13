@@ -2,11 +2,13 @@ package com.chunjae.privatepro05.biz;
 
 import com.chunjae.privatepro05.entity.Free;
 import com.chunjae.privatepro05.per.FreeMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class FreeServiceImpl implements FreeService {
     @Autowired
@@ -25,6 +27,7 @@ public class FreeServiceImpl implements FreeService {
 
     @Override
     public int freeInsert(Free free) {
+        log.info("service free : "+free);
         return freeMapper.freeInsert(free);
     }
 
