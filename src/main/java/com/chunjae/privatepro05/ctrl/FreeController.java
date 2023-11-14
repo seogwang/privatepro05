@@ -42,8 +42,11 @@ public class FreeController {
     @GetMapping("freeDetail")
     public String freeDetail(HttpServletRequest request, Model model) {
         int no = Integer.parseInt(request.getParameter("no"));
+        long id = Long.parseLong(request.getParameter("id"));
         Free free = freeService.freeDetail(no);
+        Kuser user = userService.getUserByPk(id);
         model.addAttribute("free", free);
+        model.addAttribute("user", user);
         System.out.println(free);
         return "/free/freeDetail";
     }
@@ -63,6 +66,24 @@ public class FreeController {
             throw new NoSuchDataException("No Insert Process Data");
         }
         return "redirect:list";
+    }
+
+    @GetMapping("freeUpdateFm")
+    public String freeUpdateForm(@RequestParam("no") int no, Model model) {
+        Free free = freeService.freeDetail(no);
+        model.addAttribute("free", free);
+        return "free/freeUpdateFm";
+    }
+
+    @PostMapping("freeUpdatePro")
+    public String freeUpdatePro(Free free, Model model){
+        int cnt = freeService.freeUpdate(free);
+        log.info("cnt : " + cnt);
+        if (cnt != 0) {
+            return "redirect:list";
+        } else {
+            return "redirect:freeUpdateFm";
+        }
     }
 
     @GetMapping("freeDelete")

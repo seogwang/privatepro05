@@ -46,7 +46,7 @@
             <c:forEach items="${freeList }" var="list" varStatus="status">
             <tr>
                 <td>${status.index + 1 }</td>
-                <td><a href="${path1 }/free/freeDetail?no=${list.no }">${list.title }</a></td>
+                <td><a href="${path1 }/free/freeDetail?no=${list.no }&id=${principal}">${list.title }</a></td>
                 <td>${list.id }</td>
                 <fmt:parseDate value="${list.resdate}" pattern="yyyy-MM-dd" var="date" />
                 <td><fmt:formatDate value="${date}" pattern="yyyy.MM.dd" /></td>

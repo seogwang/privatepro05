@@ -51,9 +51,10 @@
         </tr>
         </tbody>
     </table>
-
+    <c:if test="${free.id == user.name}">
+    <a class="button-error pure-button" href="/free/freeUpdateFm?no=${free.no }">글수정</a>
     <a class="button-error pure-button" href="/free/freeDelete?no=${free.no }">글삭제</a>
-
+    </c:if>
 </div>
 
 <jsp:include page="../include/footer.jsp" />
