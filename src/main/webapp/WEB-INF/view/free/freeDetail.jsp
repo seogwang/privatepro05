@@ -23,41 +23,41 @@
     </style>
 </head>
 <body>
+<div class="content_wrap">
+    <jsp:include page="../include/header.jsp" />
+    <div class="content">
+        <h2>자유게시판 상세보기</h2>
+        <table class="pure-table">
+            <tbody>
+            <tr>
+                <th>제목</th>
+                <td>${free.title }</td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>${free.content }</td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td>${free.id }</td>
+            </tr>
+            <tr>
+                <th>작성일</th>
+                <td>${free.resdate }</td>
+            </tr>
+            <tr>
+                <th>조회수</th>
+                <td>${free.visit }</td>
+            </tr>
+            </tbody>
+        </table>
+        <c:if test="${free.id == user.name}">
+        <a class="button-error pure-button" href="/free/freeUpdateFm?no=${free.no }">글수정</a>
+        <a class="button-error pure-button" href="/free/freeDelete?no=${free.no }">글삭제</a>
+        </c:if>
+    </div>
 
-<jsp:include page="../include/header.jsp" />
-<div class="content">
-    <h2>자유게시판 상세보기</h2>
-    <table class="pure-table">
-        <tbody>
-        <tr>
-            <th>제목</th>
-            <td>${free.title }</td>
-        </tr>
-        <tr>
-            <th>내용</th>
-            <td>${free.content }</td>
-        </tr>
-        <tr>
-            <th>작성자</th>
-            <td>${free.id }</td>
-        </tr>
-        <tr>
-            <th>작성일</th>
-            <td>${free.resdate }</td>
-        </tr>
-        <tr>
-            <th>조회수</th>
-            <td>${free.visit }</td>
-        </tr>
-        </tbody>
-    </table>
-    <c:if test="${free.id == user.name}">
-    <a class="button-error pure-button" href="/free/freeUpdateFm?no=${free.no }">글수정</a>
-    <a class="button-error pure-button" href="/free/freeDelete?no=${free.no }">글삭제</a>
-    </c:if>
+    <jsp:include page="../include/footer.jsp" />
 </div>
-
-<jsp:include page="../include/footer.jsp" />
-
 </body>
 </html>

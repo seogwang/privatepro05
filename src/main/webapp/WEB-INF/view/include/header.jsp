@@ -6,23 +6,68 @@
 </sec:authorize>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
+<div class="pure-g" style="align-items: center; margin-top: 2rem;">
+  <div class="pure-u-1 pure-u-xl-1-4"><a href="/" class="pure-menu-heading" style="font-weight: bold">T-FleaMarket</a></div>
+  <div class="pure-u-1 pure-u-xl-1-2">
+    <form id="searchthis" action="/search" style="display:inline;" method="get">
+      <!-- Search box for blogger by Namanyay Goel //-->
+      <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="어떤 상품을 찾으시나요?"/>
+      <input id="namanyay-search-btn" value="검색" type="submit"/>
+    </form>
+  </div>
+  <div class="pure-u-1 pure-u-xl-1-4">
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <c:if test="${empty principal}">
+              <li class="pure-menu-item pure-menu-link">
+                <a href="/login" class="pure-menu-link">채팅하기</a>
+              </li>
+              <li class="pure-menu-item pure-menu-link">
+                <a href="/login" class="pure-menu-link">상품등록</a>
+              </li>
+              <li class="pure-menu-item pure-menu-link">
+                <a href="/login" class="pure-menu-link">로그인</a>
+              </li>
+        </c:if>
+        <c:if test="${not empty principal}">
+          <li class="pure-menu-item pure-menu-link">
+            <a href="/" class="pure-menu-link">채팅하기</a>
+          </li>
+          <li class="pure-menu-item pure-menu-link">
+            <a href="/" class="pure-menu-link">상품등록</a>
+          </li>
+        </c:if>
+        <c:if test="${not empty principal}">
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+          <a href="#" id="menuLink1" class="pure-menu-link">아이디</a>
+          <ul class="pure-menu-children">
+            <li class="pure-menu-item">
+              <a href="/userUpdateFm?id=${principal}" class="pure-menu-link">마이페이지</a>
+            </li>
+            <li class="pure-menu-item">
+              <a href="/logout" class="pure-menu-link">로그아웃</a>
+            </li>
+          </ul>
+        </li>
+        </c:if>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="pure-menu pure-menu-horizontal">
-  <a href="/" class="pure-menu-heading" style="font-weight: bold">T-FleaMarket</a>
   <ul class="pure-menu-list">
-    <li class="pure-menu-item"><a href="/free/list" class="pure-menu-link">게시판</a></li>
-
-    <c:if test="${empty principal}">
-    <li class="pure-menu-item"><a href="/join" class="pure-menu-link">회원가입</a></li>
-    <li class="pure-menu-item"><a href="/login" class="pure-menu-link">로그인</a></li>
-    </c:if>
-
-    <c:if test="${not empty principal}">
-      <li class="pure-menu-item"><a href="/userUpdateFm?id=${principal}" class="pure-menu-link">마이페이지</a></li>
-      <li class="pure-menu-item"><a href="/logout" class="pure-menu-link">로그아웃</a></li>
-
-    </c:if>
-<%--    <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Pricing</a></li>--%>
-<%--    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>--%>
-<%--      <li class="pure-menu-item">Principal : ${principal}</li>--%>
+    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+      <a href="#" id="menuLink1" class="pure-menu-link">카테고리</a>
+      <ul class="pure-menu-children">
+        <li class="pure-menu-item">
+          <a href="/" class="pure-menu-link">교과서</a>
+        </li>
+        <li class="pure-menu-item">
+          <a href="/" class="pure-menu-link">참고서</a>
+        </li>
+      </ul>
+    </li>
+    <li class="pure-menu-item"><a href="/free/list" class="pure-menu-link">자유게시판</a></li>
   </ul>
 </div>

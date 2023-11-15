@@ -27,39 +27,39 @@
     </style>
 </head>
 <body>
-
-<jsp:include page="../include/header.jsp" />
-<div class="content">
-    <div class="free_wrap">
-        <h2>자유게시판 목록</h2>
-        <table class="pure-table">
-            <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-                <th>조회수</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${freeList }" var="list" varStatus="status">
-            <tr>
-                <td>${status.index + 1 }</td>
-                <td><a href="${path1 }/free/freeDetail?no=${list.no }&id=${principal}">${list.title }</a></td>
-                <td>${list.id }</td>
-                <fmt:parseDate value="${list.resdate}" pattern="yyyy-MM-dd" var="date" />
-                <td><fmt:formatDate value="${date}" pattern="yyyy.MM.dd" /></td>
-                <td>${list.visit }</td>
-            </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-        <a class="pure-button pure-button-active" href="${path1}/free/freeInsertFm" style="float:right;">글쓰기</a>
+<div class="content_wrap">
+    <jsp:include page="../include/header.jsp" />
+    <div class="content">
+        <div class="free_wrap">
+            <h2>자유게시판 목록</h2>
+            <table class="pure-table">
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${freeList }" var="list" varStatus="status">
+                <tr>
+                    <td>${status.index + 1 }</td>
+                    <td><a href="${path1 }/free/freeDetail?no=${list.no }&id=${principal}">${list.title }</a></td>
+                    <td>${list.id }</td>
+                    <fmt:parseDate value="${list.resdate}" pattern="yyyy-MM-dd" var="date" />
+                    <td><fmt:formatDate value="${date}" pattern="yyyy.MM.dd" /></td>
+                    <td>${list.visit }</td>
+                </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+            <a class="pure-button pure-button-active" href="${path1}/free/freeInsertFm" style="float:right;">글쓰기</a>
+        </div>
     </div>
+
+    <jsp:include page="../include/footer.jsp" />
 </div>
-
-<jsp:include page="../include/footer.jsp" />
-
 </body>
 </html>

@@ -17,24 +17,24 @@
     <title>자유게시판 글쓰기</title>
 </head>
 <body>
+<div class="content_wrap">
+    <jsp:include page="../include/header.jsp" />
+    <div class="content">
+        <h2>자유게시판 글쓰기</h2>
+        <form action="/free/freeInsertPro" class="pure-form" method="post" >
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <fieldset class="pure-group">
+                <input type="hidden" id="id" name="id" value="${principal}" />
+                <input type="text" id="title" name="title" class="pure-input-1-2" placeholder="제목" />
+            </fieldset>
+            <fieldset class="pure-group">
+                <textarea id="content" name="content" class="pure-input-1-2" placeholder="내용"></textarea>
+            </fieldset>
+            <button type="submit" class="pure-button pure-input-1-2 pure-button-active">글 등록</button>
+        </form>
+    </div>
 
-<jsp:include page="../include/header.jsp" />
-<div class="content">
-    <h2>자유게시판 글쓰기</h2>
-    <form action="/free/freeInsertPro" class="pure-form" method="post" >
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-        <fieldset class="pure-group">
-            <input type="hidden" id="id" name="id" value="${principal}" />
-            <input type="text" id="title" name="title" class="pure-input-1-2" placeholder="제목" />
-        </fieldset>
-        <fieldset class="pure-group">
-            <textarea id="content" name="content" class="pure-input-1-2" placeholder="내용"></textarea>
-        </fieldset>
-        <button type="submit" class="pure-button pure-input-1-2 pure-button-active">글 등록</button>
-    </form>
+    <jsp:include page="../include/footer.jsp" />
 </div>
-
-<jsp:include page="../include/footer.jsp" />
-
 </body>
 </html>

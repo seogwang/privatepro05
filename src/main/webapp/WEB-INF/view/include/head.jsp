@@ -8,4 +8,5 @@
 
 <style>
     .content { min-height: 82vh; width: 1080px; margin: 0 auto; }
+    .content_wrap { width: 1280px; clear: both; margin: 0 auto; }
 </style>

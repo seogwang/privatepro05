@@ -23,45 +23,45 @@
     </style>
 </head>
 <body>
+<div class="content_wrap">
+    <jsp:include page="../include/header.jsp" />
+    <div class="content">
+        <h2>자유게시판 수정</h2>
 
-<jsp:include page="../include/header.jsp" />
-<div class="content">
-    <h2>자유게시판 수정</h2>
+        <form action="/free/freeUpdatePro" class="pure-form pure-form-aligned" method="post">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="aligned-no">글번호</label>
+                    <input type="text" id="aligned-no" name="no" value="${free.no}" readonly />
+                </div>
+                <div class="pure-control-group">
+                    <label for="aligned-title">제목</label>
+                    <input type="text" id="aligned-title" name="title" value="${free.title}" required />
+                </div>
+                <div class="pure-control-group">
+                    <label for="aligned-content">내용</label>
+                    <textarea id="aligned-content" name="content" required>${free.content}</textarea>
+                </div>
+                <div class="pure-control-group">
+                    <label for="aligned-writer">작성자</label>
+                    <input type="text" id="aligned-writer" value="${free.id}" readonly/>
+                </div>
+                <div class="pure-control-group">
+                    <label for="aligned-resdate">작성일</label>
+                    <input type="text" id="aligned-resdate" value="${free.resdate}" readonly/>
+                </div>
+                <div class="pure-control-group">
+                    <label for="aligned-visit">조회수</label>
+                    <input type="text" id="aligned-visit" value="${free.visit}" readonly/>
+                </div>
+                <div class="pure-controls">
+                    <button type="submit" class="pure-button pure-button-primary">수정 완료</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 
-    <form action="/free/freeUpdatePro" class="pure-form pure-form-aligned" method="post">
-        <fieldset>
-            <div class="pure-control-group">
-                <label for="aligned-no">글번호</label>
-                <input type="text" id="aligned-no" name="no" value="${free.no}" readonly />
-            </div>
-            <div class="pure-control-group">
-                <label for="aligned-title">제목</label>
-                <input type="text" id="aligned-title" name="title" value="${free.title}" required />
-            </div>
-            <div class="pure-control-group">
-                <label for="aligned-content">내용</label>
-                <textarea id="aligned-content" name="content" required>${free.content}</textarea>
-            </div>
-            <div class="pure-control-group">
-                <label for="aligned-writer">작성자</label>
-                <input type="text" id="aligned-writer" value="${free.id}" readonly/>
-            </div>
-            <div class="pure-control-group">
-                <label for="aligned-resdate">작성일</label>
-                <input type="text" id="aligned-resdate" value="${free.resdate}" readonly/>
-            </div>
-            <div class="pure-control-group">
-                <label for="aligned-visit">조회수</label>
-                <input type="text" id="aligned-visit" value="${free.visit}" readonly/>
-            </div>
-            <div class="pure-controls">
-                <button type="submit" class="pure-button pure-button-primary">수정 완료</button>
-            </div>
-        </fieldset>
-    </form>
+    <jsp:include page="../include/footer.jsp" />
 </div>
-
-<jsp:include page="../include/footer.jsp" />
-
 </body>
 </html>
