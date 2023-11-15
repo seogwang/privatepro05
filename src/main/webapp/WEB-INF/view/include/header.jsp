@@ -9,8 +9,9 @@
 <div class="pure-g" style="align-items: center; margin-top: 2rem;">
   <div class="pure-u-1 pure-u-xl-1-4"><a href="/" class="pure-menu-heading" style="font-weight: bold">T-FleaMarket</a></div>
   <div class="pure-u-1 pure-u-xl-1-2">
-    <form id="searchthis" action="/search" style="display:inline;" method="get">
+    <form id="searchthis" action="/" style="display:inline;" method="get">
       <!-- Search box for blogger by Namanyay Goel //-->
+      <button type="submit" style="border: 0;"><i class="icono-search"></i></button>
       <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="어떤 상품을 찾으시나요?"/>
       <input id="namanyay-search-btn" value="검색" type="submit"/>
     </form>
