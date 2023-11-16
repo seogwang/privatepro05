@@ -11,24 +11,32 @@
 <body>
 <div class="content_wrap">
     <jsp:include page="./include/header.jsp" />
-    <div class="content">
-        <form class="pure-form pure-form-aligned" action="${path1}/auth" method="post">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-            <fieldset>
-                <div class="pure-control-group">
-                    <label for="aligned-name">아이디</label>
-                    <input type="text" id="aligned-name" name="name" placeholder="아이디" />
-                    <span class="pure-form-message-inline">Ajax 구현 부분</span>
-                </div>
-                <div class="pure-control-group">
-                    <label for="aligned-password">비밀번호</label>
-                    <input type="password" id="aligned-password" name="password" placeholder="비밀번호" />
-                </div>
-                <div class="pure-controls">
-                    <button type="submit" class="pure-button pure-button-primary">로그인</button>
-                </div>
-            </fieldset>
-        </form>
+    <div class="content" style="display: flex; justify-content: center; align-items: center">
+        <div class="form_wrap">
+            <img src="${path1}/resource/images/logo.jpg">
+            <p style="font-size: 1.5em; font-weight: bold; margin-bottom: 5rem;">
+                T-Flea Market에 오신 것을<br>
+                환영합니다.
+            </p>
+            <form class="pure-form pure-form-aligned" action="${path1}/auth" method="post">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <fieldset style="margin-bottom: 10rem;" >
+                    <div class="pure-control-group">
+                        <input type="text" id="aligned-name" name="name" placeholder="아이디" style="width: 100%;" />
+<%--                        <span class="pure-form-message-inline">Ajax 구현 부분</span>--%>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="password" id="aligned-password" name="password" placeholder="비밀번호" style="width: 100%;" />
+                    </div>
+                    <div style="width: 100%; text-align: center; margin-top: 20px; " >
+                        <button type="submit" class="pure-button pure-button-primary" style="width: 100%;">로그인</button>
+                    </div>
+                    <div style="text-align: center; width: 100%; margin-top: 20px; ">
+                        <a href="/join" >회원가입</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
     <jsp:include page="./include/footer.jsp" />
 </div>
