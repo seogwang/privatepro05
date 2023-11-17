@@ -2,6 +2,8 @@ CREATE DATABASE tfleamarket;
 
 USE tfleamarket;
 
+DROP TABLE kuser;
+
 CREATE TABLE kuser(id bigint PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(20) NOT NULL,
 password VARCHAR(300) NOT NULL,
@@ -15,6 +17,8 @@ act VARCHAR(20) DEFAULT 'JOIN',
 CONSTRAINT key_name UNIQUE(NAME)
 );
 
+DESC kuser;
+
 -- 더미 데이터
 INSERT INTO kuser VALUES (DEFAULT, 'seo', '1234', '서광', 'seo@gmail.com', '서울 목동', '010-1234-1234', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO kuser VALUES (DEFAULT, 'shin', '1234', '신수현', 'shin@gmail.com', '서울 목동', '010-1111-1111', DEFAULT, DEFAULT, DEFAULT);
@@ -25,7 +29,7 @@ UPDATE kuser SET lev='TEACHER' WHERE NAME='shin';
 
 SELECT * FROM kuser;
 
-UPDATE kuser SET PASSWORD='1234';
+UPDATE kuser SET PASSWORD='$2a$10$B1eSQwtXQMZIht3sHOWS7.a/wOmnXT9T3EqYwl7qBbOfAuj8YuKvW';
 
 SELECT * FROM kuser WHERE id=1;
 
@@ -55,7 +59,7 @@ create table freecomment (
 cno INT AUTO_INCREMENT PRIMARY KEY,
 comment VARCHAR(1000) NOT NULL,
 id VARCHAR(200) NOT NULL,
-resdate TIMESTAMP CURRENT_TIMESTAMP
+resdate TIMESTAMP default CURRENT_TIMESTAMP
 par INT(10) NOT null
 );
 
@@ -64,6 +68,24 @@ COMMIT;
 SHOW TABLES;
 
 SELECT * FROM free;
+
+CREATE TABLE item(
+ino int PRIMARY KEY AUTO_INCREMENT,
+iname VARCHAR(200) NOT null,
+price INT(10) DEFAULT 0,
+img varchar(2000) NOT NULL,
+des VARCHAR(2000) NOT NULL,
+username VARCHAR(200) NOT NULL,
+tel VARCHAR(20) NOT NULL,
+stat TINYINT(2) NOT NULL,
+resdate TIMESTAMP default CURRENT_TIMESTAMP
+);
+
+SELECT * FROM item;
+
+DROP TABLE item;
+
+COMMIT;
 
 ######################################################
 

@@ -19,44 +19,45 @@
 <body>
 <div class="content_wrap">
     <jsp:include page="./include/header.jsp" />
-    <div class="content">
-        <h2>회원가입</h2>
-
-        <form class="pure-form pure-form-aligned" action="/userInsertPro" method="post" onsubmit="return joinConfirm(this)">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-            <fieldset>
-                <div class="pure-control-group">
-                    <input type="text" id="id" name="name" placeholder="아이디" required/>
-                    <button type="button" id="idCheckBtn" class="pure-button pure-button-primary">아이디 중복 체크</button>
-                    <input type="hidden" name="idCheck" id="idCheck" value="false">
-                    <div id="msg"></div>
-                </div>
-                <div class="pure-control-group">
-                    <input type="password" id="password" name="password" placeholder="비밀번호" required/>
-                </div>
-                <div class="pure-control-group">
-                    <input type="password" id="password2" name="password2" placeholder="비밀번호확인" required/>
-                </div>
-                <div class="pure-control-group">
-                    <input type="text" id="username" name="username" placeholder="이름" required/>
-                </div>
-                <div class="pure-control-group">
-                    <input type="email" id="email" name="email" placeholder="이메일" required/>
-                    <button type="button" id="emailCheckBtn" class="pure-button pure-button-primary">이메일 중복 체크</button>
-                    <input type="hidden" name="emailCheck" id="emailCheck" value="false">
-                    <div id="msg2"></div>
-                </div>
-                <div class="pure-control-group">
-                    <input type="text" id="address" name="address" placeholder="주소" required/>
-                </div>
-                <div class="pure-control-group">
-                    <input type="tel" id="tel" name="tel" placeholder="전화번호" required/>
-                </div>
-                <div class="pure-controls">
-                    <button type="submit" class="pure-button pure-button-primary">회원가입</button>
-                </div>
-            </fieldset>
-        </form>
+    <div class="content" style="display: flex; justify-content: center; align-items: center;" >
+        <div class="form_wrap" style="margin-bottom: 10rem;">
+            <h2 style="text-align: center; margin-bottom: 5rem;">회원가입</h2>
+            <form class="pure-form pure-form-aligned" action="/userInsertPro" method="post" onsubmit="return joinConfirm(this)">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <fieldset>
+                    <div class="pure-control-group">
+                        <input type="text" id="id" name="name" placeholder="아이디" required/>
+                        <button type="button" id="idCheckBtn" class="pure-button pure-button-primary">아이디 중복 체크</button>
+                        <input type="hidden" name="idCheck" id="idCheck" value="false">
+                        <div id="msg" style="height: 1.15em;"></div>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="password" id="password" name="password" placeholder="비밀번호" required/>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="password" id="password2" name="password2" placeholder="비밀번호확인" required/>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="text" id="username" name="username" placeholder="이름" required/>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="email" id="email" name="email" placeholder="이메일" required/>
+                        <button type="button" id="emailCheckBtn" class="pure-button pure-button-primary">이메일 중복 체크</button>
+                        <input type="hidden" name="emailCheck" id="emailCheck" value="false">
+                        <div id="msg2" style="height: 1.15em;"></div>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="text" id="address" name="address" placeholder="주소" required/>
+                    </div>
+                    <div class="pure-control-group">
+                        <input type="tel" id="tel" name="tel" placeholder="전화번호" required/>
+                    </div>
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">회원가입</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
         <script>
             $(document).ready(function(){
                 $("#idCheckBtn").click(function() {
