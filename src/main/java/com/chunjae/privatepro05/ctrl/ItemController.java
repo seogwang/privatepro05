@@ -42,7 +42,7 @@ public class ItemController {
 
     @GetMapping("itemInsertFm")
     public String itemInsertForm(){
-        return "itemInsert";
+        return "/item/itemInsert";
     }
 
     @PostMapping("itemInsertPro")

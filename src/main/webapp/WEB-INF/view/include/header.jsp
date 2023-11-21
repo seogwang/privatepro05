@@ -24,7 +24,7 @@
                 <a href="/login" class="pure-menu-link">채팅하기</a>
               </li>
               <li class="pure-menu-item pure-menu-link">
-                <a href="/login" class="pure-menu-link">상품등록</a>
+                <a href="/itemInsertFm" class="pure-menu-link">상품등록</a>
               </li>
               <li class="pure-menu-item pure-menu-link">
                 <a href="/login" class="pure-menu-link">로그인</a>
@@ -59,7 +59,7 @@
 <div class="pure-menu pure-menu-horizontal">
   <ul class="pure-menu-list">
     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-      <a href="#" id="menuLink1" class="pure-menu-link">카테고리</a>
+      <a href="#" id="menuLink2" class="pure-menu-link">카테고리</a>
       <ul class="pure-menu-children">
         <li class="pure-menu-item">
           <a href="/" class="pure-menu-link">교과서</a>

@@ -36,7 +36,7 @@ public class SecurityConfig {
                 .antMatchers("/").permitAll()
                 .antMatchers("/login","/join","/idCheck","/emailCheck", "/userInsertPro").permitAll()
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .mvcMatchers("/","/resource/**","/css/**","/js/**","/images/**").permitAll()
+                .mvcMatchers("/","/resources/**","/css/**","/js/**","/images/**").permitAll()
                 .anyRequest().authenticated();
 
         //login 설정

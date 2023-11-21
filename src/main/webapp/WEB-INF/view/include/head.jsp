@@ -2,12 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
-<script src="https://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="${path1}/resource/css/pure-min.css">
+<link rel="stylesheet" href="${path1}/resources/css/pure-min.css">
 <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">--%>
-<link rel="stylesheet" href="${path1}/resource/css/grids-responsive-min.css">
-<link rel="stylesheet" href="${path1}/resource/css/styles.css">
-<link rel="stylesheet" href="${path1}/resource/css/icono.min.css">
+<link rel="stylesheet" href="${path1}/resources/css/grids-responsive-min.css">
+<link rel="stylesheet" href="${path1}/resources/css/styles.css">
+<link rel="stylesheet" href="${path1}/resources/css/icono.min.css">
 <%--<link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">--%>
 
 
