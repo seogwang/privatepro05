@@ -30,11 +30,11 @@ public class ItemServiceImpl implements ItemService{
 
     @Override
     public int itemUpdate(Item item) {
-        return 0;
+        return itemMapper.itemUpdate(item);
     }
 
     @Override
     public int itemDelete(int ino) {
-        return 0;
+        return itemMapper.itemDelete(ino);
     }
 }

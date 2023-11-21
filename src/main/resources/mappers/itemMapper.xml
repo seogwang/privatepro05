@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.chunjae.privatepro05.per.ItemMapper">
     <select id="itemList" resultType="com.chunjae.privatepro05.entity.Item">
-        select * from item order by id desc
+        select * from item where cate=#{cate} order by id desc
     </select>
     <select id="getItem" resultType="com.chunjae.privatepro05.entity.Item">
         select * from item where ino = #{ino}
     </select>
     <insert id="itemInsert">
-        insert into item values(default, #{iname}, #{price}, #{img}, #{des}, #{username}, #{tel}, #{stat}, default)
+        insert into item values(default, #{iname}, #{price}, #{img1}, #{img2}, #{img3}, #{img4}, #{img5}, #{img6}, #{img7}, #{img8}, #{img9}, #{img10}, #{des}, #{username}, #{tel}, #{stat}, default, #{cate})
     </insert>
     <update id="itemUpdate">
-        update item set iname = #{iname}, price = #{price}, img = #{img}, des = #{des}, username = #{username}, tel = #{tel}, stat = #{stat}
+        update item set iname = #{iname}, price = #{price}, img = #{img}, des = #{des}, username = #{username}, tel = #{tel}, stat = #{stat}, cate = #{cate}
     </update>
     <delete id="itemDelete">
         delete from item where ino=#{ino}
