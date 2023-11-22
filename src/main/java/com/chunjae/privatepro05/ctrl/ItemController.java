@@ -31,15 +31,6 @@ public class ItemController {
         return "item/itemList";
     }
 
-
-    @GetMapping("itemInsert")
-    public String itemInsert(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        String fileName = request.getParameter("file");
-        System.out.println(fileName);
-        log.info(fileName);
-        return "index";
-    }
-
     @GetMapping("itemInsertFm")
     public String itemInsertForm(){
         return "/item/itemInsert";

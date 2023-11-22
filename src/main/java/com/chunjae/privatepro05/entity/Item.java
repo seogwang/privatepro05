@@ -18,7 +18,7 @@ public class Item {
     private String img9;
     private String img10;
     private String des;
-    private String username;
+    private String uname;
     private String tel;
     private int stat;
     private String resdate;

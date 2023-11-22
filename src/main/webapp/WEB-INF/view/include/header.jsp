@@ -20,27 +20,27 @@
     <div class="pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
         <c:if test="${empty principal}">
+<%--              <li class="pure-menu-item pure-menu-link">--%>
+<%--                <a href="/login" class="pure-menu-link">채팅하기</a>--%>
+<%--              </li>--%>
               <li class="pure-menu-item pure-menu-link">
-                <a href="/login" class="pure-menu-link">채팅하기</a>
-              </li>
-              <li class="pure-menu-item pure-menu-link">
-                <a href="/itemInsertFm" class="pure-menu-link">상품등록</a>
+                <a href="/login" class="pure-menu-link">상품등록</a>
               </li>
               <li class="pure-menu-item pure-menu-link">
                 <a href="/login" class="pure-menu-link">로그인</a>
               </li>
         </c:if>
         <c:if test="${not empty principal}">
+<%--          <li class="pure-menu-item pure-menu-link">--%>
+<%--            <a href="/" class="pure-menu-link">채팅하기</a>--%>
+<%--          </li>--%>
           <li class="pure-menu-item pure-menu-link">
-            <a href="/" class="pure-menu-link">채팅하기</a>
-          </li>
-          <li class="pure-menu-item pure-menu-link">
-            <a href="/" class="pure-menu-link">상품등록</a>
+            <a href="/item/itemInsertFm" class="pure-menu-link">상품등록</a>
           </li>
         </c:if>
         <c:if test="${not empty principal}">
         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-          <a href="#" id="menuLink1" class="pure-menu-link">아이디</a>
+          <a href="#" id="menuLink1" class="pure-menu-link">${username} 님</a>
           <ul class="pure-menu-children">
             <li class="pure-menu-item">
               <a href="/userUpdateFm?id=${principal}" class="pure-menu-link">마이페이지</a>

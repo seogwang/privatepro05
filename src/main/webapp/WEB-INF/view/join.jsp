@@ -22,7 +22,7 @@
     <div class="content" style="display: flex; justify-content: center; align-items: center;" >
         <div class="form_wrap" style="margin-bottom: 10rem;">
             <h2 style="text-align: center; margin-bottom: 5rem;">회원가입</h2>
-            <form class="pure-form pure-form-aligned" action="/userInsertPro" method="post" onsubmit="return joinConfirm(this)">
+            <form class="pure-form pure-form-aligned" action="item//itemInsertPro" method="post" enctype="multipart/form-data" >
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <fieldset>
                     <div class="pure-control-group">

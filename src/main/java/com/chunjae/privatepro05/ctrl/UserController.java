@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
 import java.util.List;
 
 @Slf4j
@@ -25,6 +26,21 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    HttpSession session;
+
+    @GetMapping("")
+    public String index(Principal principal, Model model){
+        if(principal!=null) {
+            Long pk = Long.parseLong(principal.getName());
+            Kuser userDTO = userService.getUserByPk(pk);
+            log.info("----- MyInfo -----");
+            log.info(String.valueOf(userDTO));
+            session.setAttribute("username",userDTO.getUsername());
+        }
+        return "index";
+    }
 
     @GetMapping("/userList")
     public String userList(Model model){

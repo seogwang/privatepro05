@@ -13,7 +13,7 @@
     <jsp:include page="./include/header.jsp" />
     <div class="content" style="display: flex; justify-content: center; align-items: center">
         <div class="form_wrap">
-            <img src="${path1}/resource/images/logo.jpg">
+            <img src="${path1}/resources/images/logo.jpg">
             <p style="font-size: 1.5em; font-weight: bold; margin-bottom: 5rem;">
                 T-Flea Market에 오신 것을<br>
                 환영합니다.
