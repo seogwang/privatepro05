@@ -17,6 +17,10 @@ public class ItemServiceImpl implements ItemService{
     public List<Item> itemList() {
         return itemMapper.itemList();
     }
+    @Override
+    public List<Item> itemList2(String cate) {
+        return itemMapper.itemList2(cate);
+    }
 
     @Override
     public Item getItem(int ino) {

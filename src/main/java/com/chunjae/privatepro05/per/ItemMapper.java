@@ -8,6 +8,7 @@ import java.util.List;
 @Mapper
 public interface ItemMapper {
     List<Item> itemList();
+    List<Item> itemList2(String cate);
     Item getItem(int ino);
     int itemInsert(Item item);
     int itemUpdate(Item item);

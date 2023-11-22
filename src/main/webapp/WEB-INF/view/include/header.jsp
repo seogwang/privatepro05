@@ -62,10 +62,10 @@
       <a href="#" id="menuLink2" class="pure-menu-link">카테고리</a>
       <ul class="pure-menu-children">
         <li class="pure-menu-item">
-          <a href="/" class="pure-menu-link">교과서</a>
+          <a href="/item/list2?cate=교과서" class="pure-menu-link">교과서</a>
         </li>
         <li class="pure-menu-item">
-          <a href="/" class="pure-menu-link">참고서</a>
+          <a href="/item/list2?cate=참고서" class="pure-menu-link">참고서</a>
         </li>
       </ul>
     </li>

@@ -86,14 +86,16 @@ img10 VARCHAR(100) NOT NULL,
 des VARCHAR(2000) NOT NULL,
 uname VARCHAR(200) NOT NULL,
 tel VARCHAR(20) NOT NULL,
-stat TINYINT(2) NOT NULL,
+stat VARCHAR(30) NOT NULL,
 resdate TIMESTAMP default CURRENT_TIMESTAMP,
-cate INT(3) NOT NULL
+cate VARCHAR(30) NOT NULL
 );
 
 SELECT * FROM item;
 
 DROP TABLE item;
+
+select * from item where cate='교과서' order by ino DESC;
 
 COMMIT;
 

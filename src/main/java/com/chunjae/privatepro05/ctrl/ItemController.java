@@ -2,6 +2,7 @@ package com.chunjae.privatepro05.ctrl;
 
 import com.chunjae.privatepro05.biz.ItemService;
 import com.chunjae.privatepro05.entity.Item;
+import com.chunjae.privatepro05.excep.NoSuchDataException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
@@ -26,9 +28,34 @@ public class ItemController {
     private ItemService itemService;
 
     @GetMapping("list")
-    public String itemList() {
-        itemService.itemList();
+    public String itemList(Model model) {
+        List<Item> itemList = itemService.itemList();
+        if(itemList.isEmpty()){
+            throw new NoSuchDataException("No Such List");
+        }
+        log.info("-------item List--------");
+        log.info(itemList.toString());
+        model.addAttribute("itemList", itemList);
         return "item/itemList";
+    }
+
+    @GetMapping("list2")
+    public String itemList2(@RequestParam("cate") String cate, Model model) {
+        List<Item> itemList = itemService.itemList2(cate);
+        if(itemList.isEmpty()){
+            throw new NoSuchDataException("No Such List");
+        }
+        log.info("-------item List--------");
+        log.info(itemList.toString());
+        model.addAttribute("itemList", itemList);
+        return "item/itemList";
+    }
+
+    @GetMapping("itemDetail")
+    public String itemDetail(@RequestParam("ino") int ino, Model model) {
+        Item item = itemService.getItem(ino);
+        model.addAttribute("item", item);
+        return "item/itemDetail";
     }
 
     @GetMapping("itemInsertFm")

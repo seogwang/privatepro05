@@ -20,7 +20,7 @@ public class Item {
     private String des;
     private String uname;
     private String tel;
-    private int stat;
+    private String stat;
     private String resdate;
-    private int cate;
+    private String cate;
 }

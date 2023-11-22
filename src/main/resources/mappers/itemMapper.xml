@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.chunjae.privatepro05.per.ItemMapper">
     <select id="itemList" resultType="com.chunjae.privatepro05.entity.Item">
+        select * from item order by ino desc
+    </select>
+    <select id="itemList2" resultType="com.chunjae.privatepro05.entity.Item">
         select * from item where cate=#{cate} order by ino desc
     </select>
     <select id="getItem" resultType="com.chunjae.privatepro05.entity.Item">
