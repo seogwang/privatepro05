@@ -64,6 +64,10 @@
                 </tr>
                 </tbody>
             </table>
+            <c:if test="${item.uname == userDTO.name}">
+                <a class="button-secondary pure-button" href="/item/itemUpdateFm?ino=${item.ino }">글수정</a>
+                <a class="button-error pure-button" href="/item/itemDelete?ino=${item.ino }">글삭제</a>
+            </c:if>
         </div>
         </div>
     <jsp:include page="../include/footer.jsp" />

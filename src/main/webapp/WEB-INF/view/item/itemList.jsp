@@ -28,6 +28,7 @@
     <div class="content" style="display: flex; justify-content: center; align-items: center;" >
         <div class="list_wrap" style="margin-bottom: 10rem;">
             <ul class="item_ul" style="width:1280px;margin:20px auto;list-style:none;">
+                <c:if test="${empty itemList}"><p>해당 카테고리의 상품이 존재하지 않습니다.</p></c:if>
                 <c:forEach var="item" items="${itemList}">
                     <li class="itme_li">
                         <div>

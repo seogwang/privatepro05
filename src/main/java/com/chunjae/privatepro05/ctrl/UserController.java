@@ -38,6 +38,7 @@ public class UserController {
             log.info("----- MyInfo -----");
             log.info(String.valueOf(userDTO));
             session.setAttribute("username",userDTO.getUsername());
+            session.setAttribute("name",userDTO.getName());
         }
         return "index";
     }

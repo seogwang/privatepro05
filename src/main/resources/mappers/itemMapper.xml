@@ -14,7 +14,7 @@
         insert into item values(default, #{iname}, #{price}, #{img1}, #{img2}, #{img3}, #{img4}, #{img5}, #{img6}, #{img7}, #{img8}, #{img9}, #{img10}, #{des}, #{uname}, #{tel}, #{stat}, default, #{cate})
     </insert>
     <update id="itemUpdate">
-        update item set iname = #{iname}, price = #{price}, img = #{img}, des = #{des}, uname = #{uname}, tel = #{tel}, stat = #{stat}, cate = #{cate}
+        update item set iname = #{iname}, price = #{price}, img1 = #{img1}, img2 = #{img2}, img3 = #{img3}, img4 = #{img4}, img5 = #{img5}, img6 = #{img6}, img7 = #{img7}, img8 = #{img8}, img9 = #{img9}, img10 = #{img10}, des = #{des}, uname = #{uname}, tel = #{tel}, stat = #{stat}, cate = #{cate}
     </update>
     <delete id="itemDelete">
         delete from item where ino=#{ino}

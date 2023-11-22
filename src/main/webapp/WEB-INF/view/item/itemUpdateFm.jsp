@@ -14,47 +14,52 @@
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <jsp:include page="../include/head.jsp" />
-    <title>상품등록</title>
+    <title>상품정보수정</title>
 </head>
 <body>
 <div class="content_wrap">
     <jsp:include page="../include/header.jsp" />
     <div class="content" style="display: flex; justify-content: center; align-items: center;" >
         <div class="form_wrap" style="margin-bottom: 10rem;">
-            <h2 style="text-align: center; margin-bottom: 5rem;">상품등록</h2>
-            <form class="pure-form pure-form-aligned" action="/item/itemInsertPro" method="post" enctype="multipart/form-data">
+            <h2 style="text-align: center; margin-bottom: 5rem;">상품정보수정</h2>
+            <form class="pure-form pure-form-aligned" action="/item/itemUpdatePro" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 <fieldset>
+                    <div>
+                        <img src="${path1}/resources/item/upload/${item.img1}" alt="${item.img1}" style="width: 300px; height: 300px; object-fit: cover;">
+                    </div>
+                    <div class="pure-control-group" id="file_add">
+                        <input type="file" id="img1" name="files" value="${item.img1}" placeholder="상품 이미지" required/><br>
+                        <input type="file" id="img2" name="files" accept=".pdf" placeholder="상품 이미지" /><br>
+                        <input type="file" id="img3" name="files" accept="image/*" placeholder="상품 이미지" />
+                    </div>
                     <label for="cate">카테고리</label>
                     <select id="cate" name="cate">
+                        <option value="${item.cate}">${item.cate}</option>
                         <option value="교과서">교과서</option>
                         <option value="참고서">참고서</option>
                     </select>
                     <div class="pure-control-group">
-                        <input type="text" id="iname" name="iname" placeholder="상품명" required/>
+                        <input type="text" id="iname" name="iname" value="${item.iname}" required/>
                         <input type="hidden" id="uname" name="uname" value="${name}" >
                     </div>
                     <div class="pure-control-group">
-                        <input type="number" id="price" name="price" placeholder="가격" required/>
-                    </div>
-                    <div class="pure-control-group" id="file_add">
-                        <input type="file" id="img1" name="files" placeholder="상품 이미지" required/><br>
-                        <input type="file" id="img2" name="files" accept=".pdf" placeholder="상품 이미지" required/><br>
-                        <input type="file" id="img3" name="files" accept="image/*" placeholder="상품 이미지" required/>
+                        <input type="number" id="price" name="price" value="${item.price}" required/>
                     </div>
                     <div class="pure-control-group">
-                        <textarea id="des" name="des" placeholder="상품 설명" required></textarea>
+                        <textarea id="des" name="des" required>${item.des}</textarea>
                     </div>
                     <div class="pure-control-group">
-                        <input type="tel" id="tel" name="tel" placeholder="전화번호" required/>
+                        <input type="tel" id="tel" name="tel" value="${item.tel}" required/>
                     </div>
                     <label for="stat">상태</label>
                     <select id="stat" name="stat">
+                        <option value="${item.stat}">${item.stat}</option>
                         <option value="중고">중고</option>
                         <option value="새상품">새상품</option>
                     </select>
                     <div class="pure-controls">
-                        <button type="submit" class="pure-button pure-button-primary">상품등록</button>
+                        <button type="submit" class="pure-button pure-button-primary">수정완료</button>
                     </div>
                 </fieldset>
             </form>
