@@ -1,6 +1,8 @@
 package com.chunjae.privatepro05.ctrl;
 
+import com.chunjae.privatepro05.biz.ItemService;
 import com.chunjae.privatepro05.biz.UserService;
+import com.chunjae.privatepro05.entity.Item;
 import com.chunjae.privatepro05.entity.Kuser;
 import com.chunjae.privatepro05.excep.NoSuchDataException;
 import lombok.extern.slf4j.Slf4j;
@@ -29,19 +31,6 @@ public class UserController {
 
     @Autowired
     HttpSession session;
-
-    @GetMapping("")
-    public String index(Principal principal, Model model){
-        if(principal!=null) {
-            Long pk = Long.parseLong(principal.getName());
-            Kuser userDTO = userService.getUserByPk(pk);
-            log.info("----- MyInfo -----");
-            log.info(String.valueOf(userDTO));
-            session.setAttribute("username",userDTO.getUsername());
-            session.setAttribute("name",userDTO.getName());
-        }
-        return "index";
-    }
 
     @GetMapping("/userList")
     public String userList(Model model){

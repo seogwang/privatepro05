@@ -15,12 +15,12 @@
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <jsp:include page="../include/head.jsp" />
-    <title>자유게시판 목록</title>
+    <title>공지사항 목록</title>
     <style>
         .free_wrap {  }
         table { width: 100%; }
         table th:nth-child(1) { width: 10%; }
-        table th:nth-child(2) { width: 50%; }
+        table th:nth-child(2) { width: 60%; }
         table th:nth-child(3) { width: 10%; }
         table th:nth-child(4) { width: 10%; }
         table th:nth-child(5) { width: 10%; }
@@ -31,13 +31,12 @@
     <jsp:include page="../include/header.jsp" />
     <div class="content">
         <div class="free_wrap">
-            <h2>자유게시판 목록</h2>
+            <h2>공지사항 목록</h2>
             <table class="pure-table">
                 <thead>
                 <tr>
                     <th>번호</th>
                     <th>제목</th>
-                    <th>작성자</th>
                     <th>작성일</th>
                     <th>조회수</th>
                 </tr>
@@ -47,7 +46,6 @@
                 <tr>
                     <td>${status.index + 1 }</td>
                     <td><a href="${path1 }/free/freeDetail?no=${list.no }&id=${principal}">${list.title }</a></td>
-                    <td>${list.id }</td>
                     <fmt:parseDate value="${list.resdate}" pattern="yyyy-MM-dd" var="date" />
                     <td><fmt:formatDate value="${date}" pattern="yyyy.MM.dd" /></td>
                     <td>${list.visit }</td>
@@ -55,7 +53,9 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a class="pure-button pure-button-active" href="${path1}/free/freeInsertFm" style="float:right;">글쓰기</a>
+            <c:if test="${name == 'admin'}">
+            <a class="pure-button pure-button-active" href="${path1}/free/freeInsertFm" style="float:right;">공지사항 등록</a>
+            </c:if>
         </div>
     </div>
 

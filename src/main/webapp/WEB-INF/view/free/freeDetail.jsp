@@ -14,7 +14,7 @@
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <jsp:include page="../include/head.jsp" />
-    <title>자유게시판 상세보기</title>
+    <title>공지사항 상세보기</title>
     <style>
         .button-error {
             background: rgb(202, 60, 60);
@@ -26,7 +26,7 @@
 <div class="content_wrap">
     <jsp:include page="../include/header.jsp" />
     <div class="content">
-        <h2>자유게시판 상세보기</h2>
+        <h2>공지사항 상세보기</h2>
         <table class="pure-table">
             <tbody>
             <tr>
@@ -51,7 +51,7 @@
             </tr>
             </tbody>
         </table>
-        <c:if test="${free.id == user.name}">
+        <c:if test="${free.id == user.name || name == 'admin'}">
         <a class="button-error pure-button" href="/free/freeUpdateFm?no=${free.no }">글수정</a>
         <a class="button-error pure-button" href="/free/freeDelete?no=${free.no }">글삭제</a>
         </c:if>

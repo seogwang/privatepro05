@@ -29,9 +29,9 @@
                         <img src="${path1}/resources/item/upload/${item.img1}" alt="${item.img1}" style="width: 300px; height: 300px; object-fit: cover;">
                     </div>
                     <div class="pure-control-group" id="file_add">
-                        <input type="file" id="img1" name="files" value="${item.img1}" placeholder="상품 이미지" required/><br>
-                        <input type="file" id="img2" name="files" accept=".pdf" placeholder="상품 이미지" /><br>
-                        <input type="file" id="img3" name="files" accept="image/*" placeholder="상품 이미지" />
+                        <input type="file" id="img1" name="files"/><br>
+                        <input type="hidden" id="ino" name="ino" value="${item.ino}"/>
+                        <input type="hidden" id="img1_1" name="files1" value="${item.img1}"/>
                     </div>
                     <label for="cate">카테고리</label>
                     <select id="cate" name="cate">

@@ -28,9 +28,6 @@
                     <td><img src="${path1}/resources/item/upload/${item.img1}" alt="${item.img1}" style="width: 300px; height: 300px; object-fit: cover;"></td>
                 </tr>
                 <tr>
-                    <td><a href="${path1}/resources/item/upload/${item.img2}" download>${item.img2} 다운로드</a></td>
-                </tr>
-                <tr>
                     <th>카테고리</th>
                     <td>${item.cate }</td>
                 </tr>
@@ -64,7 +61,7 @@
                 </tr>
                 </tbody>
             </table>
-            <c:if test="${item.uname == userDTO.name}">
+            <c:if test="${item.uname == userDTO.name || name == 'admin'}">
                 <a class="button-secondary pure-button" href="/item/itemUpdateFm?ino=${item.ino }">글수정</a>
                 <a class="button-error pure-button" href="/item/itemDelete?ino=${item.ino }">글삭제</a>
             </c:if>

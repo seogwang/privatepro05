@@ -34,7 +34,7 @@ public class FreeController {
         if(freeList.isEmpty()){
             throw new NoSuchDataException("No Such List");
         }
-        model.addAttribute("msg", "자유게시판 목록 로딩");
+        model.addAttribute("msg", "공지사항 목록 로딩");
         model.addAttribute("freeList", freeList);
         return "/free/freeList";
     }

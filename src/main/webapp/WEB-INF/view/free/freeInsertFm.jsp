@@ -14,13 +14,13 @@
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <jsp:include page="../include/head.jsp" />
-    <title>자유게시판 글쓰기</title>
+    <title>공지사항 글쓰기</title>
 </head>
 <body>
 <div class="content_wrap">
     <jsp:include page="../include/header.jsp" />
     <div class="content">
-        <h2>자유게시판 글쓰기</h2>
+        <h2>공지사항 글쓰기</h2>
         <form action="/free/freeInsertPro" class="pure-form" method="post" >
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <fieldset class="pure-group">

@@ -38,9 +38,7 @@
                         <input type="number" id="price" name="price" placeholder="가격" required/>
                     </div>
                     <div class="pure-control-group" id="file_add">
-                        <input type="file" id="img1" name="files" placeholder="상품 이미지" required/><br>
-                        <input type="file" id="img2" name="files" accept=".pdf" placeholder="상품 이미지" required/><br>
-                        <input type="file" id="img3" name="files" accept="image/*" placeholder="상품 이미지" required/>
+                        <input type="file" id="img1" name="files" placeholder="상품 이미지" required/>
                     </div>
                     <div class="pure-control-group">
                         <textarea id="des" name="des" placeholder="상품 설명" required></textarea>

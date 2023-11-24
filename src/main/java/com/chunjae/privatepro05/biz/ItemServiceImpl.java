@@ -23,6 +23,11 @@ public class ItemServiceImpl implements ItemService{
     }
 
     @Override
+    public List<Item> searchItemList(String sq) {
+        return itemMapper.searchItemList(sq);
+    }
+
+    @Override
     public Item getItem(int ino) {
         return itemMapper.getItem(ino);
     }

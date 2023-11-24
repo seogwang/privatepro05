@@ -7,6 +7,9 @@
     <select id="itemList2" resultType="com.chunjae.privatepro05.entity.Item">
         select * from item where cate=#{cate} order by ino desc
     </select>
+    <select id="searchItemList" resultType="com.chunjae.privatepro05.entity.Item">
+        select * from item where iname like #{sq}
+    </select>
     <select id="getItem" resultType="com.chunjae.privatepro05.entity.Item">
         select * from item where ino = #{ino}
     </select>
@@ -14,7 +17,7 @@
         insert into item values(default, #{iname}, #{price}, #{img1}, #{img2}, #{img3}, #{img4}, #{img5}, #{img6}, #{img7}, #{img8}, #{img9}, #{img10}, #{des}, #{uname}, #{tel}, #{stat}, default, #{cate})
     </insert>
     <update id="itemUpdate">
-        update item set iname = #{iname}, price = #{price}, img1 = #{img1}, img2 = #{img2}, img3 = #{img3}, img4 = #{img4}, img5 = #{img5}, img6 = #{img6}, img7 = #{img7}, img8 = #{img8}, img9 = #{img9}, img10 = #{img10}, des = #{des}, uname = #{uname}, tel = #{tel}, stat = #{stat}, cate = #{cate}
+        update item set iname = #{iname}, price = #{price}, img1 = #{img1}, img2 = #{img2}, img3 = #{img3}, img4 = #{img4}, img5 = #{img5}, img6 = #{img6}, img7 = #{img7}, img8 = #{img8}, img9 = #{img9}, img10 = #{img10}, des = #{des}, uname = #{uname}, tel = #{tel}, stat = #{stat}, cate = #{cate} where ino=#{ino}
     </update>
     <delete id="itemDelete">
         delete from item where ino=#{ino}

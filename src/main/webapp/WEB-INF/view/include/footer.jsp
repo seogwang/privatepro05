@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 
-<div class="footer l-box">
+<div class="ft" style=" clear: both; padding: 0.5em 2em; background: #111; color: #888; text-align: center;">
   <p>
     (주)천재교육
     서울시 금천구 가산로9길 54

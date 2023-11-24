@@ -14,7 +14,7 @@
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <jsp:include page="../include/head.jsp" />
-    <title>자유게시판 수정</title>
+    <title>공지사항 수정</title>
     <style>
         .button-error {
             background: rgb(202, 60, 60);
@@ -26,7 +26,7 @@
 <div class="content_wrap">
     <jsp:include page="../include/header.jsp" />
     <div class="content">
-        <h2>자유게시판 수정</h2>
+        <h2>공지사항 수정</h2>
 
         <form action="/free/freeUpdatePro" class="pure-form pure-form-aligned" method="post">
             <fieldset>

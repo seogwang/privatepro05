@@ -9,10 +9,10 @@
 <div class="pure-g" style="align-items: center; margin-top: 2rem;">
   <div class="pure-u-1 pure-u-xl-1-4"><a href="/" class="pure-menu-heading" style="font-weight: bold">T-FleaMarket</a></div>
   <div class="pure-u-1 pure-u-xl-1-2">
-    <form id="searchthis" action="/" style="display:inline;" method="get">
+    <form id="searchthis" action="/mainSearch" style="display:inline;" method="post">
       <!-- Search box for blogger by Namanyay Goel //-->
-      <button type="submit" style="border: 0;"><i class="icono-search"></i></button>
-      <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="어떤 상품을 찾으시나요?"/>
+      <i class="icono-search"></i>
+      <input id="namanyay-search-box" name="squery" size="40" type="text" placeholder="어떤 상품을 찾으시나요?"/>
       <input id="namanyay-search-btn" value="검색" type="submit"/>
     </form>
   </div>
@@ -69,6 +69,6 @@
         </li>
       </ul>
     </li>
-    <li class="pure-menu-item"><a href="/free/list" class="pure-menu-link">자유게시판</a></li>
+    <li class="pure-menu-item"><a href="/free/list" class="pure-menu-link">공지사항</a></li>
   </ul>
 </div>

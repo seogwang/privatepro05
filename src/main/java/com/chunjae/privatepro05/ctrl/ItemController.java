@@ -76,7 +76,7 @@ public class ItemController {
     @PostMapping("itemUpdatePro")
     public String itemUpdatePro(Item item, HttpServletRequest request, List<MultipartFile> files, Model model) throws Exception {
         log.info("files 매개변수 : " + files);
-        if(files!=null){
+        if(files!=null) {
             log.info("업로드 파일개수 : " + files.size());
         }
         ServletContext application = request.getSession().getServletContext();
@@ -108,6 +108,9 @@ public class ItemController {
         item.setImg8(fileName[7]);
         item.setImg9(fileName[8]);
         item.setImg10(fileName[9]);
+        if(fileName[0] == "") {
+            item.setImg1(request.getParameter("files1"));
+        }
         itemService.itemUpdate(item);
         return "redirect:list";
     }
